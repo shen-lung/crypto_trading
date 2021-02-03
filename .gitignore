@@ -1,0 +1,7 @@
+node_modules
+build
+.eslintrc
+package-lock.json
+*.log
+dist
+.vscode
