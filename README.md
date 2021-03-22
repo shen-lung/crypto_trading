@@ -1,5 +1,6 @@
 # crypto_trade
 
 Running:
-1. yarn install
-2. yarn start
+1. cd react
+2. yarn install
+3. yarn start
