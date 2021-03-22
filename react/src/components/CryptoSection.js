@@ -19,8 +19,8 @@ import {
 
 const getCryptoList = (info, cryptoType) => {
     let infoDecimalList = [];
-    let bigPosition = 40;
-    let roundNumber = 1;
+    let bigPosition = 100;
+    let roundNumber = 0;
 
     if(cryptoType === 'btc') {
         bigPosition = 5;
@@ -89,16 +89,16 @@ export default function CryptoSection() {
                     xrpAskInfoList
                 });
             });
-        }, 8000);
+        }, 10000);
         return () => clearInterval(interval);
     })
 
     return (
         <Grid container item xs={12} className="header">
             <Grid container item xs={12}>
-                <Grid container item xs={4} justify="center" alignItems="center">BTC</Grid>
-                <Grid container item xs={4} justify="center" alignItems="center">ETH</Grid>
-                <Grid container item xs={4} justify="center" alignItems="center">XRP</Grid>
+                <Grid container item xs={4} justify="center" alignItems="center">BTC/USDT</Grid>
+                <Grid container item xs={4} justify="center" alignItems="center">ETH/USDT</Grid>
+                <Grid container item xs={4} justify="center" alignItems="center">XRP/USDT</Grid>
             </Grid>
             <Grid container item xs={4} className="table-container">
                 <Grid container item xs={6}>
@@ -158,7 +158,7 @@ export default function CryptoSection() {
                             </TableHead>
                             <TableBody>
                             {!_.isEmpty(tradeData) && tradeData.ethBidInfoList.map((data, index) => (
-                                <TableRow key={data[0]} className={data[1] >= 800 ? 'big-count' : 'bid-row'}>
+                                <TableRow key={data[0]} className={data[1] >= 300 ? 'big-count' : 'bid-row'}>
                                     <TableCell component="th" scope="row">
                                         {data[0]}
                                     </TableCell>
@@ -180,7 +180,7 @@ export default function CryptoSection() {
                             </TableHead>
                             <TableBody>
                             {!_.isEmpty(tradeData) && tradeData.ethAskInfoList.map((data) => (
-                                <TableRow key={data[0]} className={data[1] >= 800 ? 'big-count' : 'ask-row'}>
+                                <TableRow key={data[0]} className={data[1] >= 300 ? 'big-count' : 'ask-row'}>
                                     <TableCell component="th" scope="row">
                                         {data[0]}
                                     </TableCell>
@@ -204,7 +204,7 @@ export default function CryptoSection() {
                             </TableHead>
                             <TableBody>
                             {!_.isEmpty(tradeData) && tradeData.xrpBidInfoList.map((data, index) => (
-                                <TableRow key={data[0]} className={data[1] >= 1000000 ? 'big-count' : 'bid-row'}>
+                                <TableRow key={data[0]} className={data[1] >= 800000 ? 'big-count' : 'bid-row'}>
                                     <TableCell component="th" scope="row">
                                         {data[0]}
                                     </TableCell>
@@ -226,7 +226,7 @@ export default function CryptoSection() {
                             </TableHead>
                             <TableBody>
                             {!_.isEmpty(tradeData) && tradeData.xrpAskInfoList.map((data) => (
-                                <TableRow key={data[0]} className={data[1] >= 1000000 ? 'big-count' : 'ask-row'}>
+                                <TableRow key={data[0]} className={data[1] >= 800000 ? 'big-count' : 'ask-row'}>
                                     <TableCell component="th" scope="row">
                                         {data[0]}
                                     </TableCell>
