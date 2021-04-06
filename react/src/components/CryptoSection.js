@@ -91,7 +91,7 @@ export default function CryptoSection() {
             });
         }, 10000);
         return () => clearInterval(interval);
-    })
+    }, [tradeData])
 
     return (
         <Grid container item xs={12} className="header">
