@@ -65,20 +65,14 @@ export default function CryptoSection() {
                 const ethCrypto = data[1];
                 const xrpCrypto = data[2];
 
-                const btcBidInfo = btcCrypto.bids;
-                const btcAskInfo = btcCrypto.asks;
-                const btcBidInfoList = getCryptoList(btcBidInfo, 'btc')
-                const btcAskInfoList = getCryptoList(btcAskInfo, 'btc')
+                const btcBidInfoList = getCryptoList(btcCrypto.bids, 'btc')
+                const btcAskInfoList = getCryptoList(btcCrypto.asks, 'btc')
                 
-                const ethBidInfo = ethCrypto.bids;
-                const ethAskInfo = ethCrypto.asks;
-                const ethBidInfoList = getCryptoList(ethBidInfo, 'eth')
-                const ethAskInfoList = getCryptoList(ethAskInfo, 'eth')
-                
-                const xrpBidInfo = xrpCrypto.bids;
-                const xrpAskInfo = xrpCrypto.asks;
-                const xrpBidInfoList = getCryptoList(xrpBidInfo, 'xrp')
-                const xrpAskInfoList = getCryptoList(xrpAskInfo, 'xrp')
+                const ethBidInfoList = getCryptoList(ethCrypto.bids, 'eth')
+                const ethAskInfoList = getCryptoList(ethCrypto.asks, 'eth')
+
+                const xrpBidInfoList = getCryptoList(xrpCrypto.bids, 'xrp')
+                const xrpAskInfoList = getCryptoList(xrpCrypto.asks, 'xrp')
                 
                 setTradeData({
                     btcBidInfoList,
